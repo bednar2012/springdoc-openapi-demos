@@ -17,6 +17,8 @@ springdoc:
   group-configs:
     - group: stores
       paths-to-match: /store/**
+  api-docs:
+    version: openapi_3_1
 server:
   port: 8080
   forward-headers-strategy: framework

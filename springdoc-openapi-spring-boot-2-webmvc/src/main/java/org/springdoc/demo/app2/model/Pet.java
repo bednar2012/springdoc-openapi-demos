@@ -61,9 +61,14 @@ public class Pet {
 
 	@JsonProperty("category")
 	@JacksonXmlProperty(localName = "category")
-
+	@Schema(description = "category description")
 	private Category category;
 
+    @JsonProperty("otherCategory")
+    @JacksonXmlProperty(localName = "otherCategory")
+    @Schema(description = "otherCategory description")
+
+    private Category otherCategory;
 
 	@JsonProperty("photoUrls")
 	@JacksonXmlProperty(localName = "photoUrls")
@@ -131,21 +136,22 @@ public class Pet {
 		return this;
 	}
 
-	/**
-	 * Get category
-	 *
-	 * @return category
-	 */
-	@Schema(description = "")
-
 	@Valid
-
 	public Category getCategory() {
 		return category;
 	}
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	@Valid
+	public Category getOtherCategory() {
+		return otherCategory;
+	}
+
+	public void setOtherCategory(Category otherCategory) {
+		this.otherCategory = otherCategory;
 	}
 
 	public Pet photoUrls(List<String> photoUrls) {
